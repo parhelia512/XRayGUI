@@ -232,8 +232,8 @@ begin
   if (not SWPBox.Checked) and FileExists(GetUserDir + '.config/xraygui/swproxy.sh') then
   begin
     RunCommand('/bin/bash', ['-c', '~/.config/xraygui/swproxy.sh unset'], S);
-    DeleteFile(GetUserDir + '.config/xraygui/swproxy.sh')
-  end;
+    DeleteFile(GetUserDir + '.config/xraygui/swproxy.sh');
+  end
   else
   begin
     //Автозапуск самого прокси, поскольку при перезагрузке прокси будет недоступен
@@ -242,7 +242,7 @@ begin
     CreateSWProxy;
     //Запуск System-Wide Proxy если он уже работает
     if Shape1.Brush.Color <> clYellow then
-    RunCommand('/bin/bash', ['-c', '~/.config/xraygui/swproxy.sh set'], S);
+      RunCommand('/bin/bash', ['-c', '~/.config/xraygui/swproxy.sh set'], S);
   end;
   Screen.Cursor := crDefault;
 end;
@@ -1458,7 +1458,7 @@ end;
 procedure TMainForm.StopBtnClick(Sender: TObject);
 begin
   //Если SWP (xray-wsproxy.service disabled) - Выключаем глобальный прокси
- // Application.ProcessMessages;
+  // Application.ProcessMessages;
   StartProcess(GetUserDir + '.config/xraygui/swproxy.sh unset');
 
   //Снять все чекбоксы

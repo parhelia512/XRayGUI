@@ -1769,9 +1769,9 @@ begin
   FShowLogTRD := ShowLogTRD.Create(False);
   FShowLogTRD.Priority := tpNormal;
 
-  //Поток проверки обновлений Xray-Core
-  FUpdateThread := CheckUpdate.Create(False);
-  FUpdateThread.Priority := tpNormal;
+  //Поток проверки обновлений Xray-Core  Откат xray на v26.1.23
+ { FUpdateThread := CheckUpdate.Create(False);
+  FUpdateThread.Priority := tpNormal; }
 end;
 
 //Восстанавливаем индекс Check (если есть) + ItemIndex ставим на Check
